@@ -15,17 +15,9 @@ public class GetSoundUnitTests {
     Feline feline;
 
     @Test
-    public void getSound_MockFeline_ShouldReturnMyau(){
+    public void getCatSoundShouldReturnMyau(){
         Cat cat = new Cat(feline);
         cat.getSound();
         Assert.assertTrue(cat.getSound().equals("Мяу"));
-    }
-    @Mock
-    Cat cat;
-
-    @Test
-    public void verifyGetSound(){
-        cat.getSound();
-        Mockito.verify(cat).getSound();
     }
 }

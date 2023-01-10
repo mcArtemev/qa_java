@@ -7,7 +7,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 
 @RunWith(Parameterized.class)
 public class DoesHaveManeUnitTests {
@@ -24,17 +23,15 @@ public class DoesHaveManeUnitTests {
         return new Object[][]{
                 {"Самец", true},
                 {"Самка", false},
-                {"Трансгендер", false} //ToDo: разобраться, как можно проверять Exception в данном случае
+                {"Трансгендер", false}
         };
     }
 
     @Mock
     Feline felineMock;
-    @Mock
-    Lion lion1;
 
     @Test
-    public void checkSex(){
+    public void checkSexWithBoolParams(){
         try {
             Lion lion = new Lion(sex, felineMock);
             boolean result = lion.doesHaveMane();

@@ -20,19 +20,10 @@ public class GetKittensUnitTests {
     }
 
     @Mock
-    Lion lionMock;
-
-    @Test
-    public void verifyGetKittensWith(){
-        lionMock.getKittens();
-        Mockito.verify(lionMock).getKittens();
-    }
-
-    @Mock
     Feline felineMock;
 
     @Test
-    public void verifyGetKittensWithAnyParams_MockFeline_ShouldReturn5(){
+    public void verifyGetKittensWithParamsShouldReturn5(){
         try {
             Lion lion = new Lion("Самец", felineMock);
             Mockito.when(felineMock.getKittens()).thenReturn(5);

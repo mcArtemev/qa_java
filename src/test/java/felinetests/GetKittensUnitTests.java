@@ -1,6 +1,5 @@
 package felinetests;
 
-import com.example.Animal;
 import com.example.Feline;
 import org.junit.Assert;
 import org.junit.Test;
@@ -11,21 +10,9 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
 public class GetKittensUnitTests {
-    @Mock
-    Feline feline;
 
     @Test
-    public void verifyGetKittens(){
-        try {
-            feline.getKittens();
-            Mockito.verify(feline).getKittens();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @Test
-    public void getKittens_ShouldReturn1(){
+    public void getFelineKittensShouldReturn1(){
         try {
             Feline feline = new Feline();
             int result = feline.getKittens();
@@ -36,21 +23,11 @@ public class GetKittensUnitTests {
     }
 
     @Test
-    public void getKittensWithParam_ShouldReturn5(){
+    public void getFelineKittensWithParam5ShouldReturn5(){
         try {
             Feline feline = new Feline();
             int result = feline.getKittens(5);
             Assert.assertTrue(result==5);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @Test
-    public void verifyGetKittensWithParam(){
-        try {
-            feline.getKittens(5);
-            Mockito.verify(feline).getKittens(Mockito.anyInt());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

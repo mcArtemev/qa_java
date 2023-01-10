@@ -21,22 +21,10 @@ public class GetFoodUnitTests {
     }
 
     @Mock
-    Lion lionMock;
-
-    @Test
-    public void verifyGetFood(){
-        try {
-            lionMock.getFood();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-    }
-
-    @Mock
     Feline felineMock;
 
     @Test
-    public void getFood_ShouldGetPredatorFood(){
+    public void getLionFoodShouldGetPredatorFood(){
         List<String> predatorFood = List.of("Животные", "Птицы", "Рыба");
         try {
             Lion lion = new Lion("Самец", felineMock);

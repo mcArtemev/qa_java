@@ -10,21 +10,9 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
 public class GetFamilyUnitTests {
-    @Mock
-    Feline feline;
 
     @Test
-    public void verifyGetFamily(){
-        try {
-            feline.getFamily();
-            Mockito.verify(feline).getFamily();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @Test
-    public void getFamily_ShouldReturnFeline(){
+    public void getFelineFamilyShouldReturnFeline(){
         try {
             Feline feline = new Feline();
             String result = feline.getFamily();
